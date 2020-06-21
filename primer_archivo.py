@@ -1,6 +1,9 @@
 
 
 from utils import sc
+from utils import get_ejex_ejey
+from utils import graph_js
+from utils import write_html
 
 class Primer_archivo:
 
@@ -11,6 +14,7 @@ class Primer_archivo:
     def first_query(self):
 
         get_rows = self.data.map(lambda row: (row[4], float(row[10])))
+
         genre_filters= get_rows.filter( lambda row:  (row[0].lower() == "action") \
                                         or (row[0].lower() == "sports") \
                                         or (row[0].lower() == "fighting") \
@@ -22,11 +26,19 @@ class Primer_archivo:
         total = genre_filters.reduceByKey(lambda x, y: x + y)
 
 
-
-
-        print("primera consulta archivo 1")
         #print(genre_filters.collect())
         print(total.collect())
+
+        xxx = get_ejex_ejey(total)
+        print(str(xxx[0]))
+        print(str(xxx[1]))
+
+        graph_js("reporte1_archivo1",str(xxx[0]), str(xxx[1]),'bar')
+        write_html("reporte1_archivo1", "primer reporte archivo 1")
+
+
+
+
 
     def second_query(self):
 
@@ -39,7 +51,7 @@ class Primer_archivo:
         total = rows_final.reduceByKey(lambda x, y: x + y)
 
         print("segunda consulta archivo 2")
-        print(rows_nintendo.collect())
+        #print(rows_nintendo.collect())
         print(total.collect())
 
 
@@ -52,7 +64,7 @@ class Primer_archivo:
         total_ordenado = total.sortBy(lambda row: row[1], ascending=False)
 
         print("tercera consulta archivo 2")
-        print(get_rows.collect())
+        #print(get_rows.collect())
         print(total_ordenado.collect()[0:5])
 
 

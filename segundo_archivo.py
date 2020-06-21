@@ -12,7 +12,7 @@ class Segundo_archivo:
         get_rows = self.data.map(lambda row: (row[0], float(row[13])))
         total = get_rows.reduceByKey(lambda x, y: x + y)
         print("primera consulta archivo 2")
-        print(get_rows.collect())
+        #print(get_rows.collect())
         print(total.collect())
 
 
@@ -29,8 +29,8 @@ class Segundo_archivo:
         #ventas_anio = get_rows.filter(lambda row: row[1]=="2019")
         #GUATEMLA
         print("segunda consulta archivo 2")
-        print(get_rows.collect())
-        print(total.collect())
+        #print(get_rows.collect())
+        #print(total.collect())
         print(orden.collect())
 
 
@@ -43,7 +43,7 @@ class Segundo_archivo:
         total_ordenado = total.sortBy(lambda row: row[0])
 
         print("tercera consulta archivo 2")
-        print(get_rows.collect())
-        print(year2010.collect())
-        print(total.collect())
+        #print(get_rows.collect())
+        #print(year2010.collect())
+        #print(total.collect())
         print(total_ordenado.collect())
