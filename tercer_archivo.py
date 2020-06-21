@@ -1,6 +1,9 @@
 
 
 from utils import sc
+from utils import get_ejex_ejey
+from utils import graph_js
+from utils import write_html
 
 class Tercer_archivo():
 
@@ -18,6 +21,15 @@ class Tercer_archivo():
         print("primera consulta archivo 3")
         print(total_sort.collect()[:3])
 
+        xxx = get_ejex_ejey(total_sort)
+        print(str(xxx[0][:3]))
+        print(str(xxx[1][:3]))
+
+        graph_js("archivo3_reporte1", str(xxx[0][:3]), str(xxx[1][:3]), 'bar')
+        write_html("archivo3_reporte1", "Top de razas victimas")
+
+
+
 
     def second_query(self):
 
@@ -30,3 +42,4 @@ class Tercer_archivo():
         print("segunda consulta archivo 3")
         #print(total_year.collect()[:5])
         print(total_sort.collect())
+

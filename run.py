@@ -16,8 +16,8 @@ second_file.third_query()
 
 
 
-#third_file = Tercer_archivo()
-#third_file.first_query()
+third_file = Tercer_archivo()
+third_file.first_query()
 #third_file.second_query()
 
 
