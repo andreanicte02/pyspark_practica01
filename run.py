@@ -9,8 +9,8 @@ from tercer_archivo import Tercer_archivo
 
 first_file = Primer_archivo()
 first_file.first_query()
-#first_file.second_query()
-#first_file.third_query()
+first_file.second_query()
+first_file.third_query()
 
 #third_file = Tercer_archivo()
 #third_file.first_query()

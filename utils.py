@@ -18,12 +18,12 @@ def write_html(name, extra):
     file.close()
 
 
-def graph_js(name, x, y, tipo):
+def graph_js(name, x, y, tipo, jsX='x', jsY='y'):
 
     str= "var data = [\n"
     str += "{\n"
-    str += "x: " + x +",\n"
-    str += "y: " + y + ",\n"
+    str += jsX+": " + x +",\n"
+    str += jsY+": " + y + ",\n"
     str += "type: '"+tipo+"' \n"
     str += "}\n"
     str += "];\n"

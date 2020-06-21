@@ -33,8 +33,8 @@ class Primer_archivo:
         print(str(xxx[0]))
         print(str(xxx[1]))
 
-        graph_js("reporte1_archivo1",str(xxx[0]), str(xxx[1]),'bar')
-        write_html("reporte1_archivo1", "primer reporte archivo 1")
+        graph_js("archivo1_reporte1",str(xxx[0]), str(xxx[1]),'bar')
+        write_html("archivo1_reporte1", "Ventas globales de la sig categorias")
 
 
 
@@ -53,7 +53,12 @@ class Primer_archivo:
         print("segunda consulta archivo 2")
         #print(rows_nintendo.collect())
         print(total.collect())
+        xxx = get_ejex_ejey(total)
+        print(str(xxx[0]))
+        print(str(xxx[1]))
 
+        graph_js("archivo1_reporte2", str(xxx[0]), str(xxx[1]), 'pie', 'labels', 'values')
+        write_html("archivo1_reporte2", "Total de generos publicados por nintendo")
 
     def third_query(self):
 
@@ -66,6 +71,14 @@ class Primer_archivo:
         print("tercera consulta archivo 2")
         #print(get_rows.collect())
         print(total_ordenado.collect()[0:5])
+
+        xxx = get_ejex_ejey(total_ordenado)
+        print(str(xxx[0][:5]))
+        print(str(xxx[1][:5]))
+
+        graph_js("archivo1_reporte3", str(xxx[0][:5]), str(xxx[1][:5]), 'bar')
+        write_html("archivo1_reporte3", "Top 5 de plataformas con mas lanzamientos")
+
 
 
 
