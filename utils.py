@@ -33,6 +33,27 @@ def graph_js(name, x, y, tipo, jsX='x', jsY='y'):
     file.write(str)
     file.close()
 
+def graph_js_apilda(name, x, y, tipo, jsX='x', jsY='y', contador=''):
+
+    str = "var data"+ contador +" = \n"
+    str += "{\n"
+    str += jsX+": " + x +",\n"
+    str += jsY+": " + y + ",\n"
+    str += "type: '"+tipo+"', \n"
+    str += "name:" + "'"+name +"'"
+    str += "}\n"
+    str += ";\n"
+
+    return str
+
+def write_js_tarea(name, string):
+    string += "data = [data1, data2, data3]; \n"
+    string += "layout = {barmode: 'stack'}\n;"
+    string += "Plotly.newPlot('"+name+"', data,layout);\n"
+
+    file = open(name+".js", "w")
+    file.write(string)
+    file.close()
 
 
 def get_ejex_ejey(total):
